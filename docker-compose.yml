@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.3
+    environment:
+     - POSTGRES_DB=peliculas_db
+     - POSTGRES_USER=root
+     - POSTGRES_PASSWORD=123456
+    ports:
+      - '5432:5432'
+    volumes:
+      - pelis-data:/var/lib/postgresql/data
+
+volumes:
+  pelis-data:
+    external: false
